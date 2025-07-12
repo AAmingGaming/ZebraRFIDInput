@@ -1,3 +1,14 @@
+# Zebra RFID Input Automation
+This repository provides a simple and effective way to automatically input a hexadecimal key into the Zebra RFID App on Zebra devices.
+
+## Features
+- Automatically sends hex keys to the Zebra RFID app using ADB (Android Debug Bridge).
+- Includes batch and PowerShell scripts for easy automation.
+- Provides scripts to create shortcuts and download the official Zebra icon for better usability.
+
+## Supported Devices
+- This solution has been tested on the Zebra RFID Reader MC3300R.
+
 # Setup
 
 ## Download Zebra Logo
