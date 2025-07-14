@@ -1,7 +1,7 @@
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $TargetPath = "$ScriptDir\send_hex.bat"         # Target file or application
 $ShortcutPath = "$ScriptDir\Run RFID Tool.lnk"        # Where the shortcut should be saved
-$IconPath = "$ScriptDir\zebra_logo.ico"                # Icon file path (must be .ico)
+$IconPath = "$ScriptDir\shortcut_icon.ico"                # Icon file path (must be .ico)
 
 $WshShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut($ShortcutPath)
