@@ -17,8 +17,9 @@ if ($device_count -eq 0) {
 Write-Host "Device Selected: $serial"
 
 # Check if an argument was passed
-if ($args.Count -eq 0) {
-    $hex_key = Read-Host "No argument passed. Please enter a Hex Key"
+if ($args.Count -eq 0 -or [string]::IsNullOrWhiteSpace($args[0])) {
+    $input = Read-Host "No argument passed. Please enter a Hex Key"
+	$hex_key = $input.Trim()
     if ([string]::IsNullOrWhiteSpace($hex_key)) {
         Write-Host "Error: No value input. Exiting..."
         exit 1
@@ -32,6 +33,7 @@ $hex_key = $hex_key.Trim()
 # Check if it contains only alphanumeric characters (A-Z, a-z, 0-9)
 if ($hex_key -notmatch '^[a-zA-Z0-9]+$') {
     Write-Host "Error: Hex Key must be alphanumeric only with no spaces or special characters."
+    Write-Host "Hex Key value: '$hex_key'"
     exit 1
 }
 
